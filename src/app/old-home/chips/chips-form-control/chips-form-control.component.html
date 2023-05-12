@@ -1,0 +1,26 @@
+<div class="container mt-3">
+    <div class="example-button-contaniner">
+        <button mat-raised-button (click)="formControl.disable()">Disable from control</button>
+        <button mat-raised-button (click)="formControl.enable()">Enable from control</button>
+    </div>
+    
+    <p>
+        <i>Enter video keyword</i>
+    </p>
+    <mat-form-field appearance="fill" class="example-form-field">
+        <mat-label>Video keywords</mat-label>
+        <mat-chip-grid #chipGrid aria-label="Enter keyword" [formControl]="formControl">
+            <mat-chip-row *ngFor="let keyword of keyWords" (removed)="removeKeyWord(keyword)">
+                {{keyword}}
+            <button matChipRemove aria-label="'remove' + keyword">
+                <mat-icon>cancel</mat-icon>
+            </button>
+            </mat-chip-row>
+        </mat-chip-grid>
+        <input type="text" placeholder="New Keywor..." [matChipInputFor]="chipGrid" (matChipInputTokenEnd)="add($event)"/>
+    </mat-form-field>
+    <p>
+        <b>The following keyword are entered: </b>{{formControl.value}}
+    </p>
+    
+</div>

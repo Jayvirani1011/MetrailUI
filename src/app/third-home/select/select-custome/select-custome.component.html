@@ -1,0 +1,44 @@
+<div class="container mt-3">
+    <!-- custome select -->
+    <h3 class="mt-3">Select with custom trigger text</h3>
+    <mat-form-field appearance="fill" class="mt-3">
+        <mat-label>Toppings</mat-label>
+        <mat-select [formControl]="toppings" multiple="">
+            <mat-select-trigger>
+                {{toppings.value?.[0] || ''}}
+                <span *ngIf="(toppings.value?.length || 0) > 1" class="example-additional-selection">
+                    (+{{(toppings.value?.length || 0) > 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+                </span>
+            </mat-select-trigger>
+            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <!-- disabled select -->
+    <h3 class="mt-3">Disabled select</h3>
+    <p>
+        <mat-checkbox [formControl]="disaleSelect">Disable Select</mat-checkbox>
+    </p>
+
+    <h4>mat-select</h4>
+    <mat-form-field appearance="fill">
+        <mat-label>Choose an option</mat-label>
+        <mat-select [disabled]="disaleSelect.value">
+            <mat-option value="option1">Option 1</mat-option>
+            <mat-option value="option2" disabled>Option 2(disabled)</mat-option>
+            <mat-option value="option3">Option 3</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <h4>native html select</h4>
+    <mat-form-field appearance="fill">
+        <mat-label>Choose an option</mat-label>
+        <select matNativeControl [disabled]="disaleSelect.value">
+            <option value="">Selected</option>
+            <option value="volvo">Volvo</option>
+            <option value="saab" disabled>Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </select>
+    </mat-form-field>
+</div>

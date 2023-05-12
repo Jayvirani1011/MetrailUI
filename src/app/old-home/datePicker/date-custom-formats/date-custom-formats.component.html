@@ -1,0 +1,18 @@
+<div class="container mt-3">
+    <!-- Custome date formate -->
+    <h3>Custome date formate</h3>
+    <mat-form-field>
+        <mat-label>Verbose datepicker</mat-label>
+        <input type="text" matInput [matDatepicker]="dp" [formControl]="date">
+        <mat-hint>MMMM, DD, YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp></mat-datepicker>
+    </mat-form-field>
+
+    <!-- inline calendar -->
+    <h3 class="mt-3">Inline calendar</h3>
+    <mat-card class="demo-inline-calendar-card">
+        <mat-calendar [(selected)]="selected"></mat-calendar>
+    </mat-card>
+    <p><b>Selected Date: </b>{{selected}}</p>
+</div>

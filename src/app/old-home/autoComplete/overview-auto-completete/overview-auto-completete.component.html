@@ -1,0 +1,22 @@
+<div class="container mt-3 example-form">
+    <h1>Overview StateGroup</h1>
+    <form action="">
+        <mat-form-field class="example-full-width">
+            <mat-label>State</mat-label>
+            <input type="text" matInput aria-label="State" [matAutocomplete]="auto" [formControl]="stateCltl">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let state of filteredState | async" [value]="state.name">
+                    <img [src]="state.flag" class="example-option-img" height="25">
+                    <span>Name: {{state.name}}</span>
+                    <span>Population: {{state.population}}</span>
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        
+        <br/>
+
+        <mat-slide-toggle [checked]="stateCltl.disabled" (change)="stateCltl.disabled ? stateCltl.enable() :  stateCltl.disable()">
+
+        </mat-slide-toggle>
+    </form>
+</div>

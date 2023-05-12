@@ -1,0 +1,51 @@
+<div class="container">
+    <form action="" class="mt-3">
+        <h3>Chips Autocomplete</h3>
+        <mat-form-field class="example-chip-list mt-3" appearance="fill">
+            <mat-label>Fvaorite Fruits</mat-label>
+            <mat-chip-grid #chipGrid aria-label="Fruit Selection">
+                <mat-chip-row *ngFor="let fruit of fruits" (removed)="remove(fruit)">
+                    {{fruit}}
+                    <button matChipRemove [attr.aria-label]="'remove' + fruit">
+                        <mat-icon>cancel</mat-icon>
+                    </button>
+                </mat-chip-row>
+            </mat-chip-grid>
+            <input type="text" placeholder="New Fruits..." #fruitInput [formControl]="fruitCtrl"
+                [matChipInputFor]="chipGrid" [matAutocomplete]="auto"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                <mat-option *ngFor="let fruit of filteredFruits | async" [value]="fruit">{{fruit}}</mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </form>
+
+    <!-- Chips avatar -->
+    <h3 class="mt-3">Chips avatar</h3>
+    <mat-chip-listbox aria-label="Dog selection">
+        <mat-chip>
+            <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+                alt="Photo of a Shiba Inu" />
+            Dog one
+        </mat-chip>
+        <mat-chip color="primary">
+            <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+                alt="Photo of a Shiba Inu" />
+            Dog two
+        </mat-chip>
+        <mat-chip color="accent">
+            <img matChipAvatar src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+                alt="Photo of a Shiba Inu" />
+            Dog three
+        </mat-chip>
+    </mat-chip-listbox>
+
+    <!-- Drag and Drop -->
+    <h3 class="mt-3">Drag and Drop</h3>
+    <mat-chip-set class="example-chip" cdkDropList cdkDropListOrientation="horizontal"
+        (cdkDropListDropped)="drop($event)">
+        <mat-chip class="example-box" cdkDrag *ngFor="let charater of charactersArr">
+            {{charater.name}}
+        </mat-chip>
+    </mat-chip-set>
+</div>

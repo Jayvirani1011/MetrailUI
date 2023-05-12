@@ -1,0 +1,21 @@
+<div class="container mt-3">
+    <mat-form-field>
+        <mat-label>Different Locals</mat-label>
+        <input type="text" matInput [matDatepicker]="dp">
+        <mat-hint>{{getDateFormatString()}}</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp></mat-datepicker>
+    </mat-form-field>
+    <button (click)="french()" mat-button>Dyanamically switch to french</button>
+
+    <!-- min max date -->
+    <h3>Min Max Date</h3>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+</div>
+

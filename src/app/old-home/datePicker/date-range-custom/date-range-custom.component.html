@@ -1,0 +1,45 @@
+<div class="container">
+    <!-- Custome Date picker range -->
+    <h3 class="mt-3">Custome Date picker range</h3>
+    <mat-form-field appearance="fill" class="mt-3">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+            <input type="text" matStartDate placeholder="Start Date">
+            <input type="text" matEndDate placeholder="End Date">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY - MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+
+    <!-- Datepicker action buttons -->
+    <h3 class="mt-3">Datepicker action buttons</h3>
+    <mat-form-field appearance="fill" class="example-form-field mt-3">
+        <mat-label>Choose a date</mat-label>
+        <input type="text" matInput [matDatepicker]="datepicker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+            <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+            </mat-datepicker-actions>
+        </mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="exampleform-field">
+        <mat-label>Enter a date range</mat-label>
+        <mat-date-range-input [rangePicker]="rangePicker">
+            <input type="text" matStartDate placeholder="Start Date">
+            <input type="text" matEndDate placeholder="End Date">
+        </mat-date-range-input>
+        <mat-hint>MM/DD/YYYY - MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="rangePicker"></mat-datepicker-toggle>
+        <mat-date-range-picker #rangePicker>
+            <mat-date-range-picker-actions>
+                <button mat-button matDateRangePickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDateRangePickerApply>Apply</button>
+            </mat-date-range-picker-actions>
+        </mat-date-range-picker>
+    </mat-form-field>
+</div>

@@ -1,0 +1,10 @@
+<div class="container mt-3">
+    <h3>Radio Button</h3>
+    <label for="" class="example-radio-group ">Pick your favorite season</label>
+    <mat-radio-group class="example-radio-group " [(ngModel)]="favoriteSeason" aria-labelledby="example-radio-group">
+        <mat-radio-button name="example-radio-button" *ngFor="let season of seasons" [value]="season">
+            {{season}}
+        </mat-radio-button>
+    </mat-radio-group>
+    <div>Your favorite season is: {{favoriteSeason}}</div>
+</div>

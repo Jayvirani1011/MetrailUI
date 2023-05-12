@@ -1,0 +1,8 @@
+.example-card{
+    max-width: 400px;
+}
+
+.example-header-image{
+    background-image: url("D:/angular_task/angular/practice/angularMaterialUI/src/assets/jethalal.jpg");
+    background-size: cover;
+}

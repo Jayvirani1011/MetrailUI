@@ -1,0 +1,16 @@
+<div class="container mt-3 example-form">
+    <h1>Select StateGroup</h1>
+    <form action="" [formGroup]="stateForm">
+        <mat-form-field class="example-full-width">
+            <mat-label>State Group</mat-label>
+            <input type="text" matInput formControlName="stateGroup" required [matAutocomplete]="autoGroup">
+            <mat-autocomplete #autoGroup="matAutocomplete">
+                <mat-optgroup *ngFor="let group of stateGroupOptions | async" [label]="group.letter">
+                    <mat-option *ngFor="let name of group.names" [value]="name">
+                        {{name}}
+                    </mat-option>
+                </mat-optgroup>
+            </mat-autocomplete>
+        </mat-form-field>
+    </form>
+</div>

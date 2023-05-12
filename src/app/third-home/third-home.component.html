@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <!-- <a class="navbar-brand" >Angular Examples</a> -->
+        <a class="navbar-brand"><img src="assets/download.png" alt="" height="50" style="border-radius: 50%;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="/newHome" routerLinkActive="active">New Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="progressSpinner" routerLinkActive="active">Progress Spinner
+                        Example</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="radioButton" routerLinkActive="active">Radio Button
+                        Example</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="ripples" routerLinkActive="active">Ripples Example</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Select Examples
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="selectCustome" routerLinkActive="active">Select
+                                Custome</a></li>
+                        <li><a class="dropdown-item" routerLink="selectCustomErrorStateMatcher"
+                                routerLinkActive="active">Select Custome ErrorStateMatcher</a></li>
+                        <li><a class="dropdown-item" routerLink="selectForm" routerLinkActive="active">Select Formr</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        SideNav Examples
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="sideNaveAutosize" routerLinkActive="active">SideNav
+                                Autosize</a></li>
+                        <li><a class="dropdown-item" routerLink="sideNavBackgroundSetting"
+                                routerLinkActive="active">SideNav Background Setting</a></li>
+                        <li><a class="dropdown-item" routerLink="sideNavFixed" routerLinkActive="active">Fixed
+                                SideNav</a></li>
+                        <li><a class="dropdown-item" routerLink="sideNavCustormEscap" routerLinkActive="active">Custome
+                                Escap SideNav</a></li>
+                        <li><a class="dropdown-item" routerLink="sideNavConfigurableMode"
+                                routerLinkActive="active">Configurable Mode SideNav</a></li>
+                        <li><a class="dropdown-item" routerLink="sideNavOpenClose " routerLinkActive="active">SideNav
+                                Open & Close</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" routerLink="practiceRoundTextBox" routerLinkActive="active">Practice
+                        Example</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<nav>
+    <ul>
+        <li *ngFor="let routes of routeObj">
+            <a [class]="routes.class" [routerLink]="routes.routerlink" routerLinkActive="active">{{routes.name}}</a>
+            <ul *ngIf="routes.child">
+                <li *ngFor="let route of routes.child">
+                    <a [class]="route.class" [routerLink]="route.routerlink"
+                        routerLinkActive="active">{{route.name}}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+<router-outlet></router-outlet>

@@ -1,0 +1,26 @@
+/* ::ng-deep .mat-form-field {
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  ::ng-deep .mat-form-field-label {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #333;
+  }
+  
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    border-color: #333;
+  }
+
+  .input{
+    color: yellow;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 20px; 
+    margin-left: 50px;
+  } */

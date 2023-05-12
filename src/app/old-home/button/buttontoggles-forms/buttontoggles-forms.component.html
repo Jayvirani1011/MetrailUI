@@ -1,0 +1,21 @@
+<div class="container">
+    <section class="mt-3">
+        <h4>Button troggle inside of a tempate-driven form</h4>
+        <mat-button-toggle-group [(ngModel)]="fontStyle" arial-label="Font Style">
+            <mat-button-toggle value="bold">Bold</mat-button-toggle>
+            <mat-button-toggle value="italic">Italic</mat-button-toggle>
+            <mat-button-toggle value="underline">Underline</mat-button-toggle>
+        </mat-button-toggle-group>
+        <p><b>Chosen value is: </b>{{fontStyle}}</p>
+    </section>
+
+    <section class="mt-3">
+        <h4>Button troggle inside of a Reactive form</h4>
+        <mat-button-toggle-group [formControl]="fontStyleControl" arial-label="Font Style">
+            <mat-button-toggle value="bold">Bold</mat-button-toggle>
+            <mat-button-toggle value="italic">Italic</mat-button-toggle>
+            <mat-button-toggle value="underline">Underline</mat-button-toggle>
+        </mat-button-toggle-group>
+        <p><b>Chosen value is: </b>{{fontStyleControl.value}}</p>
+    </section>
+</div>

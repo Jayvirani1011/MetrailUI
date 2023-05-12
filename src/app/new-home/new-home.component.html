@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+      <!-- <a class="navbar-brand" >Angular Examples</a> -->
+      <a class="navbar-brand"><img src="assets/download.png" alt="" height="50" style="border-radius: 50%;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link active" routerLink="/oldHome" routerLinkActive="active">Old Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" routerLink="/thirdHome" routerLinkActive="active">Third Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Form Field Examples
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" routerLink="formAppearance" routerLinkActive="active">Form Appearance</a></li>
+                      <li><a class="dropdown-item" routerLink="formCustomeContact" routerLinkActive="active">Form Custome Contact</a></li>
+                      <li><a class="dropdown-item" routerLink="formCustomeEmail" routerLinkActive="active">Form Custome Email</a></li>
+                      <li><a class="dropdown-item" routerLink="formFieldHint" routerLinkActive="active">Form Field Hint</a></li>
+                      <li><a class="dropdown-item" routerLink="formFieldLabel" routerLinkActive="active">Form Field Label</a></li>
+                      <li><a class="dropdown-item" routerLink="formFieldSimple" routerLinkActive="active">Form Field Simple</a></li>
+                      <li><a class="dropdown-item" routerLink="formFieldPrefixSuffix" routerLinkActive="active">Form Field Prefix and Suffix</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" routerLink="gridList" routerLinkActive="active">Grid List Example</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" routerLink="icon" routerLinkActive="active">Icon Example</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Input Examples
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="inputClearButton" routerLinkActive="active">Input Clear Button</a></li>
+                    <li><a class="dropdown-item" routerLink="inputError" routerLinkActive="active">Input Clear Error</a></li>
+                    <li><a class="dropdown-item" routerLink="inputsForm" routerLinkActive="active">Input Foprms</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    List Examples
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="listBasic" routerLinkActive="active">Basic List</a></li>
+                    <li><a class="dropdown-item" routerLink="listSection" routerLinkActive="active">Section List</a></li>
+                    <li><a class="dropdown-item" routerLink="listSelection" routerLinkActive="active">Selection List</a></li>
+                    <li><a class="dropdown-item" routerLink="listVariants" routerLinkActive="active">List Variants</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Menu Examples
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="menuIcon" routerLinkActive="active">Menu With Icon</a></li>
+                    <li><a class="dropdown-item" routerLink="menuNested" routerLinkActive="active">Nested Menu</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Paginator Examples
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="paginatorConfigurable" routerLinkActive="active">Configurable Paginator</a></li>
+                    <li><a class="dropdown-item" routerLink="paginatorInternationalization" routerLinkActive="active">Internationalization Paginator</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" routerLink="progressbar" routerLinkActive="active">Progressbar Example</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

@@ -1,0 +1,23 @@
+<div class="container mt-3">
+    <!-- date picker open -->
+    <h3>Date picker Open</h3>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input type="text" matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <button mat-raised-button (click)="picker.open()">Open</button>
+
+    <!-- date picker custome icon -->
+    <h3 class="mt-3">Date picker custome icon</h3>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Choose date</mat-label>
+        <input type="text" matInput [matDatepicker]="pickerArrow">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="pickerArrow">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #pickerArrow></mat-datepicker>
+    </mat-form-field>
+</div>

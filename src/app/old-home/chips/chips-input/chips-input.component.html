@@ -1,0 +1,35 @@
+<div class="container mt-3">
+    <h3>Form Input</h3>
+    <mat-form-field class="example-chip-list">
+        <mat-label>Favorite Characters</mat-label>
+        <mat-chip-grid #chipGrid aria-label="Enter Characters">
+            <mat-chip-row *ngFor="let char of character" (removed)="remove(char)" [editable]="true"
+                (edited)="edit(char, $event)" [aria-description]="'Press enter to edit' + char.name">
+                {{char.name}}
+                <button matChipRemove [attr.aria-label]="'remove ' + char.name">
+                    <mat-icon>cancel</mat-icon>
+                </button>
+            </mat-chip-row>
+            <input placeholder="New Character...." [matChipInputFor]="chipGrid"
+                [matChipInputSeparatorKeyCodes]="seperatorKeysCode" [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)"/>
+        </mat-chip-grid>
+    </mat-form-field>
+
+    <!-- Bsic Chip -->
+    <h3>Basic Chip</h3>
+    <mat-chip-listbox aria-label="Fish selection">
+        <mat-chip-option>One fish</mat-chip-option>
+        <mat-chip-option>Two fish</mat-chip-option>
+        <mat-chip-option color="accent">Accent fish</mat-chip-option>
+        <mat-chip-option color="warn">Warn fish</mat-chip-option>
+    </mat-chip-listbox>
+
+    <!-- Chip Color -->
+    <h3>Chip Color</h3>
+    <mat-chip-listbox class="mat-mdc-chip-set-stacked" aria-label="Color Slection">
+        <mat-chip-option *ngFor="let chip of availableColors" selected [color]="chip.color">
+            {{chip.name}}
+        </mat-chip-option>
+    </mat-chip-listbox>
+
+</div>
